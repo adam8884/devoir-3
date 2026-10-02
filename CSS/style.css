@@ -1,0 +1,56 @@
+a[href="#main"] {
+    position: absolute;
+    left: -9999px;
+}
+
+a[href="#main"]:focus {
+    position: static;
+}
+header {
+    background: linear-gradient(to right, lightgray , gray , rgb(178, 164, 176));
+    padding: 15px;
+    text-align: center;
+}
+
+header a {
+    color: black;
+    text-decoration: none;
+    margin: 20px;
+    font-size: 20px;
+}
+main {
+    background: linear-gradient(to top, rgba(147, 146, 146, 0.47), rgba(170, 163, 163, 0.525), rgba(214, 210, 210, 0.74));
+}
+img {
+    border: 3px solid purple;
+    padding: 10px;
+    border-radius: 15px;
+}
+.phones {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+header ul {
+    display: flex;
+    justify-content: center;
+    gap: 200px;
+}
+header a {
+    transition: 0.3s;
+}
+header a:hover {
+    color: red;
+    background-color: white;
+    border-radius: 5px;
+}
+.images img:nth-child(1) {
+    border-radius: 5px;
+}
+
+.images img:nth-child(2) {
+    border-radius: 20px;
+}
+
+.images img:nth-child(3) {
+    border-radius: 50px;
+}
