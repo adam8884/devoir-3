@@ -33,7 +33,7 @@ img {
 header ul {
     display: flex;
     justify-content: center;
-    gap: 200px;
+    gap: 50px;
 }
 header a {
     transition: 0.3s;
