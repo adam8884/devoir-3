@@ -33,7 +33,7 @@ img {
 header ul {
     display: flex;
     justify-content: center;
-    gap: 50px;
+    gap: 200px;
 }
 header a {
     transition: 0.3s;
@@ -74,6 +74,21 @@ header a:hover {
 
     .phones {
         grid-template-columns: 1fr;
+    }
+
+}
+@media screen and (max-width: 600px) {
+
+    header ul {
+        display: flex;
+        justify-content: space-around;
+        gap: 10px;
+        padding: 0;
+    }
+
+    header a {
+        font-size: 16px;
+        margin: 5px;
     }
 
 }
