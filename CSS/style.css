@@ -1,94 +1,295 @@
-a[href="#main"] {
+
+/* ===== GENERAL ===== */
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    background: #0B1020;
+    color: #F8FAFC;
+    font-family: Arial, sans-serif;
+    line-height: 1.7;
+}
+
+/* ===== ACCESSIBILITY ===== */
+.skip-link {
     position: absolute;
-    left: -9999px;
+    top: -100px;
+    left: 15px;
+    z-index: 1000;
+    padding: 12px 18px;
+    background: #FFFFFF;
+    color: #0B1020;
+    border-radius: 8px;
 }
 
-a[href="#main"]:focus {
-    position: static;
+.skip-link:focus {
+    top: 10px;
 }
+
+/* ===== NAVIGATION ===== */
 header {
-    background: linear-gradient(to right, lightgray , gray , rgb(178, 164, 176));
-    padding: 15px;
-    text-align: center;
+    background: rgba(17, 24, 43, 0.97);
+    border-bottom: 1px solid #29324A;
+    padding: 12px 20px;
 }
 
-header a {
-    color: black;
-    text-decoration: none;
-    margin: 20px;
-    font-size: 20px;
+header .navbar {
+    padding: 8px 0;
 }
-main {
-    background: linear-gradient(to top, rgba(147, 146, 146, 0.47), rgba(170, 163, 163, 0.525), rgba(214, 210, 210, 0.74));
+
+.navbar-brand {
+    color: #FFFFFF !important;
+    font-size: 1.3rem;
+    letter-spacing: 2px;
 }
-img {
-    border: 3px solid purple;
-    padding: 10px;
-    border-radius: 15px;
+
+.navbar-nav {
+    gap: 20px;
 }
-.phones {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+
+.nav-link {
+    color: #CBD5E1 !important;
+    transition: color 0.3s ease;
 }
-header ul {
+
+.nav-link:hover,
+.nav-link:focus,
+.nav-link.active {
+    color: #A78BFA !important;
+}
+
+/* ===== HERO ===== */
+.hero {
+    padding: 85px 20px;
+    background:
+        radial-gradient(ellipse at top, #30205B 0%, transparent 65%),
+        linear-gradient(135deg, #11182B, #0B1020);
+    border-bottom: 1px solid #29324A;
+}
+
+.hero .text-uppercase {
+    color: #38BDF8;
+    letter-spacing: 3px;
+    font-size: 0.85rem;
+}
+
+.hero h1 {
+    margin: 18px 0;
+    font-size: clamp(2.2rem, 5vw, 4rem);
+    font-weight: 800;
+    line-height: 1.2;
+    background: linear-gradient(90deg, #FFFFFF, #A78BFA, #38BDF8);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+.hero p {
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.hero-text {
+    color: #CBD5E1;
+    font-size: 1.1rem;
+}
+
+/* ===== SECTION TITLES ===== */
+main h2 {
+    color: #FFFFFF;
+    font-weight: 750;
+}
+
+.container > .text-center > p {
+    color: #94A3B8;
+}
+
+/* ===== PHONE CARDS ===== */
+.phone-card {
+    height: 100%;
+    overflow: hidden;
+    background: linear-gradient(145deg, #1B2339, #12192A);
+    color: #F8FAFC;
+    border: 1px solid #303B55;
+    border-radius: 20px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+    transition:
+        transform 0.3s ease,
+        border-color 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.phone-card:hover {
+    transform: translateY(-7px);
+    border-color: #8B5CF6;
+    box-shadow: 0 15px 35px rgba(139, 92, 246, 0.18);
+}
+
+.phone-images {
+    padding: 18px;
+    background: radial-gradient(
+        ellipse at center,
+        #28314A 0%,
+        #171D32 75%
+    );
+}
+
+.phone-images .card-img-top {
+    width: 100%;
+    height: 240px;
+    object-fit: contain;
+    border-radius: 12px;
+    background: transparent;
+}
+
+.extra-images {
     display: flex;
     justify-content: center;
-    gap: 200px;
-}
-header a {
-    transition: 0.3s;
-}
-header a:hover {
-    color: red;
-    background-color: white;
-    border-radius: 5px;
-}
-.images img:nth-child(1) {
-    border-radius: 5px;
+    align-items: center;
+    gap: 12px;
+    margin-top: 14px;
 }
 
-.images img:nth-child(2) {
-    border-radius: 20px;
+.extra-images img {
+    width: 48%;
+    height: 95px;
+    object-fit: contain;
+    padding: 5px;
+    border: 1px solid #38435D;
+    border-radius: 12px;
+    background: #11182B;
 }
 
-.images img:nth-child(3) {
-    border-radius: 50px;
+.card-body {
+    padding: 22px;
+    display: flex;
+    flex-direction: column;
 }
-@media screen and (max-width: 600px) {
 
-    body {
-        font-size: 90%;
+.card-title {
+    color: #FFFFFF;
+    font-size: 1.3rem;
+    font-weight: 750;
+}
+
+.card-text {
+    color: #B8C3D6;
+    font-size: 0.96rem;
+}
+
+/* ===== PRICES ===== */
+.price {
+    margin-top: auto;
+    padding-top: 12px;
+    color: #A78BFA;
+    font-size: 1.08rem;
+    font-weight: 750;
+}
+
+/* ===== BUTTONS ===== */
+.buy-btn {
+    padding: 12px 16px;
+    border: 0;
+    border-radius: 10px;
+    background: linear-gradient(90deg, #7C3AED, #5B5FEF);
+    color: #FFFFFF;
+    font-weight: bold;
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.buy-btn:hover,
+.buy-btn:focus {
+    background: linear-gradient(90deg, #6D28D9, #4338CA);
+    color: #FFFFFF;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(124, 58, 237, 0.3);
+}
+
+/* ===== BACK TO TOP ===== */
+.back-top {
+    display: inline-block;
+    padding: 11px 22px;
+    border: 1px solid #8B5CF6;
+    border-radius: 30px;
+    color: #C4B5FD;
+    text-decoration: none;
+    transition: 0.3s ease;
+}
+
+.back-top:hover,
+.back-top:focus {
+    background: #8B5CF6;
+    color: #FFFFFF;
+}
+
+/* ===== FOOTER ===== */
+footer {
+    background: #080C18;
+    color: #94A3B8;
+    border-top: 1px solid #29324A;
+}
+
+/* ===== RESPONSIVE DESIGN ===== */
+@media (max-width: 576px) {
+    .hero {
+        padding: 55px 18px;
     }
 
-    h1 {
-        font-size: 30px;
+    .hero .text-uppercase {
+        letter-spacing: 2px;
     }
 
-    img {
-        max-width: 100%;
-        height: auto;
+    header {
+        padding: 10px;
     }
 
+    .navbar-brand {
+        font-size: 1rem;
+        letter-spacing: 1px;
+    }
+
+    .navbar .container {
+        flex-wrap: wrap;
+        gap: 8px;
+    }
+
+    .navbar-nav {
+        gap: 5px;
+    }
+
+    .nav-link {
+        padding: 6px !important;
+        font-size: 0.88rem;
+    }
+
+    .phone-images .card-img-top {
+        height: 210px;
+    }
+
+    .card-body {
+        padding: 18px;
+    }
 }
-@media screen and (max-width: 600px) {
 
-    .phones {
-        grid-template-columns: 1fr;
+/* ===== REDUCE MOTION IF REQUESTED ===== */
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
     }
 
-}
-@media screen and (max-width: 600px) {
-
-    header ul {
-        display: flex;
-        justify-content: space-around;
-        gap: 10px;
-        padding: 0;
+    *,
+    *::before,
+    *::after {
+        transition-duration: 0.01ms !important;
+        animation-duration: 0.01ms !important;
     }
-
-    header a {
-        font-size: 16px;
-        margin: 5px;
-    }
-
 }
